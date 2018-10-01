@@ -1,0 +1,1086 @@
+@charset "UTF-8";
+/* -------- Stylesheet Info ----------
+
+style sheet for Look Marketing Group Website
+
+version 1.0 modified on Sep 6th, 2010
+
+Copyright © 2010 LookMarketingGroup
+
+Code by Matt Ma
+
+----------------------------------- */
+
+/* -------- color guide ----------
+
+----------------------------------- */
+
+/* to jump sections: highlight the special character Cmd + Shift + G */
+/* -------- Table of Content ----------
+      ^1 Global Reset CSS Stylesheet
+	  ^2 Layout Style
+	  ^3 Universal Classes
+	  ^4
+	  ^5
+	  ^6
+	  ^7
+			  ^7a
+			  ^7b
+			  ^7c
+			  ^7d
+			  ^7e
+			  ^7f
+			  ^7g
+----------------------------------- */
+
+/* ^1 ----------------------------- Global Reset CSS Stylesheet -Eric Meyers Reset --------------------------- */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* Reset HTML5 Elements in CSS Stylesheet */
+header, footer, article, section, hgroup, nav, figure{
+	/* Giving a display value to the HTML5 rendered elements */
+	display:block;
+}
+/* ^2 ------------------------------------- universal class  ------------------------------------ */
+/* Clear Floated Elements
+/* http://sonspring.com/journal/clearing-floats */
+.clear {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+/* http://perishablepress.com/press/2009/12/06/new-clearfix-hack */
+.clearfix:after {
+	clear: both;
+	content: ' ';
+	display: block;
+	font-size: 0;
+	line-height: 0;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+/* Use this to create a horizontal ruler across a column. */
+hr {
+  background: #ddd;
+  color: #ddd;
+  clear: both;
+  float: none;
+  width: 100%;
+  height: .1em;
+  margin: 0 0 1.45em;
+  border: none;
+}
+hr.space {
+  background: #fff;
+  color: #fff;
+  visibility: hidden;
+}
+.small      { font-size: .8em; margin-bottom: 1.875em; line-height: 1.875em; }
+.large      { font-size: 1.2em; line-height: 2.5em; margin-bottom: 1.25em; }
+.hide       { display: none; }
+/* ^3 ------------------------------------- Layout Style ------------------------------------ */
+html, body {height: 100%;} /* Footer Position Stick */
+body{
+	font-size: 62.5%;
+	margin: 0;
+	padding: 0;
+}
+/*Opera Fix for Footer Position Stick */
+body:before {
+	content:"";
+	float:left;
+	height:100%;
+	margin-top:-32767px;
+	width:0;
+}
+body{
+	background: #ecfafa url(../images/main_content/bg.jpg) repeat-x;
+}
+#wrapper {
+	margin: 0 auto;
+	min-height: 100%; /* Footer Position Stick */
+	min-width: 1000px;
+	width: 1000px;
+	height: auto;
+}
+#header{
+	width: 1000px;
+	height: 700px;
+	background: url(../images/main_content/look_header.jpg) no-repeat;
+	position: relative;
+}
+#nav{
+	position: relative;
+	top:350px;
+	left: 20px;
+}
+#nav_design, #nav_marketing, #nav_web{
+	position: absolute;
+	top: 0;
+}
+#nav_design a, #nav_marketing a, #nav_web a{
+	display: block;
+	height: 52px;
+}
+#nav_design{
+	left: 60px;
+}
+#nav_design a{
+	background: url(../images/navigation/nav_design.jpg) no-repeat;
+	width: 172px;
+}
+#nav_design a:hover{
+	background: url(../images/navigation/nav_design_over.jpg) no-repeat;
+}
+#nav_marketing {
+	left: 227px;
+}
+#nav_marketing a{
+	background: url(../images/navigation/nav_marketing.jpg) no-repeat;
+	width: 270px;
+}
+#nav_marketing a:hover{
+	background: url(../images/navigation/nav_marketing_over.jpg) no-repeat;
+}
+#nav_web {
+	top:1px;
+	left: 490px;
+}
+#nav_web a{
+	background: url(../images/navigation/nav_web.jpg) no-repeat;
+	width: 117px;
+}
+#nav_web a:hover{
+	background: url(../images/navigation/nav_web_over.jpg) no-repeat;
+}
+#nav ul li{
+    list-style: none;
+}
+ul.fix_nav {
+   position: fixed;
+   right: 0;
+   top: 150px;
+	margin: 0px;
+    padding: 0px;
+    list-style: none;
+    z-index:9999;
+	width: 100px;
+	height: auto;
+}
+
+ul.fix_nav li{
+
+   width: 100px;
+}
+ul.fix_nav li a{
+	float: right;
+	clear: right;
+    display: block;
+    width: 100px;
+    height: 70px;
+	margin-right: -80px;
+    background-color:#CFCFCF;
+    background-position:center center;
+    border:1px solid #AFAFAF;
+    -moz-border-radius:10px 0px 0px 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -webkit-border-top-left-radius: 10px;
+    -khtml-border-bottom-left-radius: 10px;
+    -khtml-border-top-left-radius: 10px; /*In the JavaScript part we will define a function that makes the elements slide out. But let's first add some rounded borders to them*/
+    /*-moz-box-shadow: 0px 4px 3px #000;
+    -webkit-box-shadow: 0px 4px 3px #000;
+    */
+    opacity: 0.6;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=60);/*make them really neat, we add some opacity, so that the content underneath is visible*/
+
+}
+.fix_nav .fix_nav_contact a{
+	background: url(../images/navigation/home.png) no-repeat;
+	margin-right: -80px;
+	}
+.fix_nav .fix_nav_design a{background: url(../images/navigation/id_card.png) no-repeat;}
+.fix_nav .fix_nav_marketing a{background: url(../images/navigation/search.png) no-repeat;}
+.fix_nav .fix_nav_web a{background: url(../images/navigation/camera.png) no-repeat;}
+.fix_nav .fix_nav_about a{background: url(../images/navigation/ipod.png) no-repeat;}
+.fix_nav .fix_nav_contact a{background: url(../images/navigation/mail.png) no-repeat;}
+
+#main{
+	width: 1000px;
+	height: auto;
+	position: relative;
+}
+#design {
+    background: url(../images/main_content/design_page_bg.jpg) no-repeat;
+	width: 1000px;
+	height: 880px;
+	position: relative;
+	z-index: 1;
+}
+#design #design_top_strip, #design #design_bottom_strip {
+    position: absolute;
+	z-index: 5;
+}
+#design #design_top_strip{
+    top:55px;
+	left: -35px;
+	z-index: 5;
+}
+#design #design_bottom_strip{
+    top:556px;
+	left: 60px;
+}
+#marketing {
+	width: 1000px;
+	height: 1530px;
+	position: relative;
+	top: -90px;
+}
+#marketing_target{
+	position: absolute;
+	top: 265px;
+	z-index: 3;
+	background: color;
+}
+#marketing #marketing_top{
+	background: url(../images/main_content/marketing_page_top.png) no-repeat;
+	width: 1000px;
+	height: 530px;
+	position:relative;
+	z-index: 5;
+}
+#marketing #marketing_bottom{
+	background: url(../images/main_content/marketing_page_bg.jpg) no-repeat;
+	width: 1000px;
+	height: 1000px;
+	position: relative;
+	z-index: 1;
+	top: -87px;
+	left: 10px;
+}
+#marketing #marketing_bottom_strip {
+    background: url(../images/main_content/marketing_page_bottom.png) no-repeat;
+	width: 1000px;
+	height: 210px;
+	position: absolute;
+	z-index: 5;
+	top: 934px;
+	left: 1px;
+}
+#web {
+    background: url(../images/main_content/web_page_bg.jpg) no-repeat;
+	width: 1000px;
+	height: 700px;
+	position: relative;
+	top: -175px;
+	z-index: 1;
+	/*overflow: hidden;*/ /* make footer sticky  */
+	padding-bottom: 1600px !important; /* make footer sticky  */
+}
+#web #web_top_strip, #web #web_bottom_strip {
+    position: absolute;
+	z-index: 5;
+}
+#web #web_top_strip{
+    top: 8px;
+	left: 80px;
+}
+#web #web_bottom_strip{
+    top:565px;
+	left: 155px;
+}
+/* Footer Position Stick */
+#footer{
+	background: #136083 url(../images/main_content/footer_bg.png) repeat-x;
+	clear:both;
+	position: relative;
+	height: 1600px;
+	margin-top: -1600px; /* negative value of footer height */
+	min-width: 1000px;
+	z-index: 3;
+}
+/*-----------------------------------------universal classes-----------------------------------------------*/
+.submenu ul li{
+   width: 105px;
+   text-align: right;
+}
+.submenu #design_scroll, .submenu #marketing_scroll, .submenu #web_scroll{
+   list-style: none;
+}
+.submenu ul li.sliding-element a{
+   text-decoration: none;
+   color: #dcafaf;
+   font: 14px/18px Arial, Helvetica, sans-serif;
+   display: block;
+   width: 125px;
+   padding: 5px 15px;
+}
+.submenu ul li a:hover{
+	color: #b60003;
+}
+.submenu ul li a.current{
+	color: #b60003;
+}
+/*-----------------------------------------Share Interest-----------------------------------------------*/
+#design_container .panel1 .panel1_right, #marketing_container .panel1 .panel1_right, #web_container .panel1 .panel1_right{
+	width: 460px;
+
+	position: relative;
+	float:left;
+}
+#design_container .panel1 .panel1_right{
+height: 520px;
+}
+#marketing_container .panel1 .panel1_right, #web_container .panel1 .panel1_right{
+	height: 530px;
+}
+#design_container .panel1 .panel1_left, #marketing_container .panel1 .panel1_left, #web_container .panel1 .panel1_left{
+	width: 310px;
+	height: 520px;
+	margin-right: 30px;
+	 float: left;
+	 position: relative;
+	 top: 95px;
+	 left: 20px;
+}
+#marketing_container .panel1 .panel1_left {
+     left: 40px;
+}
+#design_container .panel1 .panel1_left h2, #marketing_container .panel1 .panel1_left h2, #web_container .panel1 .panel1_left h2{
+     font: bold 28px/36px Arial, Helvetica, sans-serif;
+	 margin-bottom: 15px;
+	 color: #101b26;
+}
+#design_container .panel1 .panel1_left p, #marketing_container .panel1 .panel1_left p, #web_container .panel1 .panel1_left p{
+     font: 16px/22px Arial, Helvetica, sans-serif;
+	 font-weight: lighter;
+	 color: #124f6c;
+}
+/*-----------------------------------------design container-----------------------------------------------*/
+#design_container {
+   width: 800px;
+   height: 520px;
+   position: relative;
+   top: 128px;
+   left: 101px;
+   z-index: 3;
+   overflow: hidden;
+}
+#design .submenu{
+   width: 105px;
+height: auto;
+position: absolute;
+top: 229px;
+left: -50px;
+z-index: 15;
+}
+#design_container .viewport{
+   width: 5200px;
+   height: 755px;
+}
+#design_container .panel1, #design_container .panel2, #design_container .panel3, #design_container .panel4, #design_container .panel5, #design_container .panel6{
+   width: 800px;
+   height: 520px;
+   position: relative;
+   float: left;
+   padding-top: 129px;
+   top: -129px;
+   left: 0;
+}
+#design_container .panel1 {
+   padding-left: 25px;
+   height: 520px;
+
+}
+#design_container .panel2{
+	background: black;
+}
+#design_container .panel3{
+	background: red;
+}
+#design_container .panel4{
+	background: yellow;
+}
+#design_container .panel5{
+	background: maroon;
+}
+#design_container .panel6{
+	background: green;
+}
+/* panel1 left side */
+.separator {
+   display: block;
+   width: 275px;
+   height: 	6px;
+   margin: 25px 0;
+}
+.portfolio a{
+   background: url(../images/design_tab/portfolio_btn.jpg) no-repeat;
+   width: 277px;
+   height: 76px;
+   display: block;
+}
+.portfolio a:hover{
+   background: url(../images/design_tab/portfolio_btn_over.jpg) no-repeat;
+}
+/* panel1 right side */
+
+#fresh_logo{
+	background: url(../images/design_tab/fresh_logo.jpg) no-repeat;
+	width: 221px;
+	height: 109px;
+	position: absolute;
+	top: 80px;
+	left: 170px;
+}
+#identity_package a{
+	background: url(../images/design_tab/identity_package.jpg) no-repeat;
+	width: 331px;
+	height: 138px;
+	position: absolute;
+	top: 211px;
+	left: 2px;
+	display: block;
+}
+#identity_package a:hover{
+	display: block;
+	width: 331px;
+	height: 138px;
+	background: url(../images/design_tab/identity_package_over.jpg) no-repeat;
+}
+#cards a{
+	background: url(../images/design_tab/cards.jpg) no-repeat;
+	width: 128px;
+	height: 182px;
+	position: absolute;
+	top: 348px;
+	left: 57px;
+	display: block;
+}
+#cards a:hover{
+	display: block;
+	width: 128px;
+	height: 182px;
+	background: url(../images/design_tab/cards_over.jpg) no-repeat;
+}
+#signage a{
+	display: block;
+	background: url(../images/design_tab/signage.jpg) no-repeat;
+	width: 229px;
+	height: 182px;
+	position: absolute;
+	top: 348px;
+	left: 185px;
+}
+#signage a:hover{
+	display: block;
+	width: 229px;
+	height: 182px;
+	background: url(../images/design_tab/signage_over.jpg) no-repeat;
+}
+/*-----------------------------------------marketing container-----------------------------------------------*/
+#marketing_container {
+   width: 800px;
+   height: 530px;
+   position: relative;
+   top: -1060px;
+   left: 110px;
+   z-index: 3;
+  overflow: hidden;
+}
+#marketing .submenu{
+      width: 105px;
+height: auto;
+position: absolute;
+top: 572px;
+left: -40px;
+z-index: 5;
+
+}
+#marketing_container .viewport{
+   width: 4150px;
+   height: 530px;
+}
+#marketing_container .panel1, #marketing_container .panel2, #marketing_container .panel3, #marketing_container .panel4, #marketing_container .panel5{
+   width: 800px;
+   height: 530px;
+   position: relative;
+   float: left;
+   padding-top: 206px;
+   top: -206px;
+   left: 38px;
+}
+#marketing_container .panel1 {
+
+
+	height: 530px;
+}
+#marketing_container .panel2{
+	background: black;
+}
+#marketing_container .panel3{
+	background: red;
+}
+#marketing_container .panel4{
+	background: yellow;
+}
+#marketing_container .panel5{
+	background: maroon;
+}
+#view_case a{
+   display: block;
+   background: url(../images/marketing_tab/view_case_studies.jpg) no-repeat;
+   width: 317px;
+   height:78px;
+}
+#view_case a:hover{
+   display: block;
+   background: url(../images/marketing_tab/view_case_studies_over.jpg) no-repeat;
+}
+#excel{
+   position: relative;
+   top: 90px;
+   right: -60px;
+}
+/*-----------------------------------------web container-----------------------------------------------*/
+#web_container {
+   width: 800px;
+   height: 530px;
+   position: relative;
+   top: 133px;
+   left: 101px;
+   z-index: 3;
+  overflow: hidden;
+}
+#web .submenu{
+   width: 120px;
+	height: auto;
+position: absolute;
+top: 232px;
+left: -46px;
+z-index: 5;
+}
+#web_container .viewport{
+   width: 5200px;
+   height: 530px;
+}
+#web_container .panel1, #web_container .panel2, #web_container .panel3, #web_container .panel4, #web_container .panel5, #web_container .panel6{
+   width: 800px;
+   height: 530px;
+   position: relative;
+   float: left;
+   padding-top: 134px;
+   top: -134px;
+   left: 0;
+
+}
+#web_container .panel1 {
+   	padding-left: 25px;
+	height: 530px;
+	position: relative;
+}
+#web_container .panel2{
+	background: black;
+}
+#web_container .panel3{
+	background: red;
+}
+#web_container .panel4{
+	background: yellow;
+}
+#web_container .panel5{
+	background: maroon;
+}
+#web_container .panel6{
+	background: green;
+}
+
+/* web container panel1 right */
+
+#web_home #monitor{
+   position: relative;
+   top:69px;
+   right: -29px;
+   z-index: 1;
+}
+#web_home #on_top_monitor{
+   position: absolute;
+   top: 100px;
+   left: 65px;
+   z-index: 3;
+   width: 375px;
+   height: 265px;
+}
+#web_home_web, #web_iphone, #web_widget, #web_home_flash{
+	position:absolute;
+}
+#web_home_web a, #web_iphone a, #web_widget a, #web_home_flash a{
+
+display: block;
+}
+#web_home_web{
+
+	width: 117px;
+   height: 82px;
+   top: 35px;
+   left: 75px;
+}
+#web_home_web a{
+   background:url(../images/web_tab/web.png) no-repeat;
+   width: 85px;
+   height: 82px;
+   position: absolute;
+}
+#web_home_web a:hover{
+   background:url(../images/web_tab/web_over.png) no-repeat;
+   width: 117px;
+   height: 82px;
+   left: -16.5px;
+}
+#web_iphone{
+	width: 117px;
+height: 83px;
+top: 35px;
+left: 235px;
+}
+#web_iphone a{
+background: url(../images/web_tab/iphone.png) no-repeat;
+width: 48px;
+height: 83px;
+position: absolute;
+left: 1px;
+}
+#web_iphone a:hover{
+background: url(../images/web_tab/iphone_over.png) no-repeat;
+width: 117px;
+height: 83px;
+left: -34px;
+}
+#web_widget{
+	width: 117px;
+	height: 76px;
+	top: 160px;
+	left: 81px;
+}
+#web_widget a{
+	background: url(../images/web_tab/widget.png) no-repeat;
+	width: 73px;
+	height: 71px;
+	position: absolute;
+}
+#web_widget a:hover{
+	background: url(../images/web_tab/widget_over.png) no-repeat;
+	width: 117px;
+	height: 76px;
+top: -1.7px;
+left: -22px;
+}
+#web_home_flash{
+	width: 117px;
+	height: 76px;
+	top: 169px;
+	left: 230px;
+}
+#web_home_flash a{
+	background: url(../images/web_tab/flash.png) no-repeat;
+	width: 59px;
+	height: 59px;
+	position: absolute;
+	top: -1px;
+}
+#web_home_flash a:hover{
+	background: url(../images/web_tab/flash_over.png) no-repeat;
+	width: 117px;
+	height: 76px;
+top: -8.5px;
+left: -28.8px;
+}
+/*-----------------------------------------Footer about us-----------------------------------------------*/
+#about_tab{
+	margin: 0 auto;
+    width: 1000px;
+}
+#aboutus {
+	background: url(../images/main_content/about_page_bg.jpg) no-repeat;
+   width: 1000px;
+   height: 170px;
+   position: relative;
+   top: 0px;
+}
+#about_slogan {
+   width: 830px;
+   height: 90px;
+   margin: 15px 85px;
+}
+#members {
+	width: 830px;
+   height: 580px;
+   margin: 15px 83px 15px 87px;
+   position: relative;
+}
+/*#members h3{
+	margin: 10px 10px 0 10px;
+	color:#FFF;
+	font:bold 18pt Arial, sans-serif;
+	letter-spacing:-1px;
+}
+#members a{
+color:#C8DCE5;
+}
+#members p{
+  padding: 0 10px;
+color:#afafaf;
+					font-weight:bold;
+					font:10pt "Lucida Grande", Arial, sans-serif;
+}
+#members .boxgrid{
+				width: 255px;
+				height: 255px;
+				position: relative;
+			}
+#members .boxgrid img{
+					position: absolute;
+					top: 0;
+					left: 0;
+					border: 0;
+	}
+
+#members .boxcaption{
+				float: left;
+				position: absolute;
+				background: #000;
+				height: 100px;
+				width: 100%;
+				opacity: .8;
+				//For IE 5-7
+				filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+				// For IE 8
+				-MS-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+ 	}
+ #members .captionfull .boxcaption {
+ 					top: 260;
+ 					left: 0;
+ 	}
+ #members .caption .boxcaption {
+ 					top: 220;
+ 					left: 0;
+ 	}*/
+#members img{
+   border: 4px solid #6899b0;
+   margin: 8px 5px;
+}
+#member_info {
+	width: 830px;
+   height: auto;
+   margin: 15px 83px 15px 87px;
+   position: relative;
+}
+#contact{
+	width: 830px;
+   height: auto;
+    margin: 25px 0;
+
+}
+#contact a{
+	display: block;
+	background:	url(../images/contact/contact.jpg) no-repeat;
+	width: 850px;
+	height: 150px;
+	cursor: pointer;
+}
+#contact a:hover{
+   background: url(../images/contact/contact_over.png) no-repeat;
+}
+#copyright{
+   width: 830px;
+}
+#copyright p{
+   padding-left: 50px;
+   font: 28px/50px Arial, Helvetica, sans-serif;
+   color: #fefefe;
+}
+
+/*-----------------------------------Member Social Network and Info----------------------------------------*/
+#members_viewport {
+   width: 830px;
+   height: 330px;
+   overflow: hidden;
+  /* background: red;*/
+}
+#members_viewport #member_holder{
+   height: 330px;
+   width: 4650px;
+}
+#member_holder .core-member{
+	 width: 830px;
+   height: 330px;
+   float: left;
+}
+#member_top, #member_bottom{
+   position: relative;
+   left: -35px;
+}
+#member_bottom{
+   top: 25px;
+}
+#member_info .member_left {
+   float: left;
+   width: 512px;
+   height: auto;
+   margin-left: 25px;
+   margin-top: 30px;
+}
+#member_info .member_left h2{
+   font: 30px/28px Arial, Helvetica, sans-serif;
+   color: white;
+   padding-bottom: 15px;
+}
+#member_info .member_left p{
+	font: 12px/16px Arial, Helvetica, sans-serif;
+   color: white;
+   margin-right: 30px;
+   margin-bottom: 20px;
+}
+#member_info .member_right {
+   float: left;
+   width: 260px;
+   height: 280px;
+   background-color: #3b7691;
+   margin: 30px 0;
+}
+#member_info .member_right h2{
+   padding: 20px 10px 20px 12px;
+}
+#member_info .member_right ul {
+   width: 160px;
+   height: auto;
+   display: block;
+   margin: 0 auto;
+}
+#member_info .member_right ul li{
+   float: left;
+   padding-right: 10px;
+}
+#member_info .member_right ul li a{
+   display: block;
+   width: 65px;
+   height: 60px;
+   margin: 2px;
+}
+#member_info .member_right ul li a img{
+   display: block;
+   width: 65px;
+   height:60px;
+}
+.member_right .facebook, .member_right .rss, .member_right .im, .member_right .flickr, .member_right .twitter, .member_right .youtube {
+	display: block;
+	width: 65px;
+	height: 60px;
+}
+.member_right .facebook {
+	background: url(../images/about_tab/facebook.jpg) no-repeat;
+}
+.member_right .facebook:hover {
+
+}
+.member_right .rss {
+    background: url(../images/about_tab/rss.jpg) no-repeat;
+}
+.member_right .rss:hover {
+
+}
+.member_right .im {
+	background: url(../images/about_tab/im.jpg) no-repeat;
+}
+.member_right .im:hover {
+
+}
+.member_right .flickr {
+	background: url(../images/about_tab/flickr.jpg) no-repeat;
+}
+.member_right .flickr:hover {
+
+}
+.member_right .twitter {
+	background: url(../images/about_tab/twitter.jpg) no-repeat;
+}
+.member_right .twitter:hover {
+
+}
+.member_right .youtube {
+	background: url(../images/about_tab/youtube.jpg) no-repeat;
+}
+.member_right .youtube:hover {
+
+}
+
+/* caption styling */
+.caption-top, .caption-bottom {
+	color: #ffffff;
+	padding: 1.2em;
+	font-weight: bold;
+	font-size: 13px;
+	font-family: arial;
+	cursor: default;
+	background: #000;
+	text-shadow: 1px 1px 0 #202020;
+}
+.caption-top {
+}
+.caption-bottom {
+}
+.caption a, .caption a {
+	border: 0 none;
+	text-decoration: none;
+	background: #000000;
+	padding: 0.3em;
+}
+.caption a:hover, .caption a:hover {
+	background: #202020;
+}
+.caption-wrapper {
+	float: left;
+}
+br.c { clear: both; }
+/* end caption styling */
+/*-----------------------------------------Contact Us-----------------------------------------------*/
+#contact_form {
+   width: 1000px;
+   height: 440px;
+   position: absolute;
+   bottom: -21px;
+   left: -100px;
+   background: url(../images/contact/contact_bg.png) no-repeat;
+   display: none;
+}
+#close_btn {
+   width: 100%;
+   height: 40px;
+   margin: 20px 0 10px;
+   cursor: pointer;
+}
+#close_btn img {
+   position: relative;
+   left: 48%;
+}
+#contact_left, #contact_right {
+   width: 400px;
+   height: auto;
+
+}
+#contact_left {
+	float: left;
+	padding-left: 50px;
+}
+#contact_right {
+	float: right;
+    padding-right: 50px;
+	position: relative;
+}
+#contact_left p, #contact_right .formElements label{
+	font: 14px/22px Arial, Helvetica, sans-serif;
+	color: #f1f1f1;
+}
+#contact_left ul li {
+    width: 400px;
+	height: 60px;
+	padding-top: 15px;
+	padding-left: 5px;
+}
+#contact_left ul li .info_img{
+	width: 40px;
+	height: 40px;
+    float: left;
+	margin: 10px 0;
+	padding-right: 35px;
+}
+#contact_left ul li p.firstp {
+    padding-top: 10px;
+}
+#contact_right .formElements label{
+	font-weight: 100;
+}
+#contact_right img{
+    margin-bottom: 	25px;
+}
+#contact_right form{
+    margin-left: 25px;
+}
+#contact_right form .formElements {
+	width: 400px;
+	height: 35px;
+	padding-bottom: 10px;
+}
+#contact_right .formElements label{
+    width: 90px;
+	text-align: left;
+	padding-right: 20px;
+	float: left;
+	height: 22px;
+	line-height: 22px;
+}
+#contact_right .formElements input, #contact_right .formElements textarea {
+    display: block;
+	float: left;
+	width: 200px;
+}
+#contact_right .formElements input{
+    height: 20px;
+}
+#contact_right .formElements textarea{
+	width: 205px;
+	height: 65px;
+}
+#contact_right .formElements #submit {
+    width: 60px;
+	height: 20px;
+	display: block;
+	clear: both;
+    position: relative;
+	top: 15px;
+	left: 260px;
+	background: #333;
+	color: white;
+	line-height: 20px;
+}

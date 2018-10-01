@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+/* IE 5 | 5.5 | 6 */
+* html .gainlayout {height:1px;}
+ 
+/* IE 5 | 5.5 | 6 and 7 in quirks mode only */
+* html .gainlayout {height /**/:1px;}
+ 
+/* IE 5.5 | 6 | 7 */
+.gainlayout {zoom:1;}
+ 
+/* IE 7 */
+.gainlayout {min-height:0;}
